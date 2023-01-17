@@ -1,0 +1,38 @@
+{
+  "name": "lika-rating-component",
+  "version": "1.1.0",
+  "description": "",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LikaSpb/rating-component"
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc && yarn copyFilesEsm",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs && yarn copyFilesCjs",
+    "prepare": "npm run build",
+    "copyFilesEsm": "copyfiles -u 1 src/**/*.css dist/esm",
+    "copyFilesCjs": "copyfiles -u 1 src/**/*.css dist/cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "copyfiles": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  }
+}
